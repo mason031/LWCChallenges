@@ -1,0 +1,34 @@
+<template>
+
+    <template lwc:if={band}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-column slds-size_2-of-3">
+                <div class="slds-card">
+                    <div class="slds-card__header">
+                        <h1>{band.name}</h1>
+                    </div>
+
+                    <div class="slds-card__body">
+                        <img src={band.image} style="padding:10px" />
+                        <br />
+                        <lightning-button label="Learn More" onclick={displayInfo}></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <template lwc:if={description}>
+                <div class="slds-column slds-size_1-of-3">
+                    <div class="slds-card">
+                        <div class="slds-card__header">
+                            Description
+                        </div>
+                        <div class="slds-card__body">
+                            <p>{band.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+
+
+</template>

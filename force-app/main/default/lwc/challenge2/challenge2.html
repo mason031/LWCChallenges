@@ -1,0 +1,10 @@
+<template>
+
+    <lightning-modal-header label = "Header">
+        {text}
+    </lightning-modal-header>
+    <lightning-button label = "Toggle input box" onclick ={handleClick}></lightning-button>
+    <template lwc:if={render}>
+        <lightning-input lwc:ref = 'input' onchange ={handleChange} type = 'text'></lightning-input>
+    </template>
+</template>
