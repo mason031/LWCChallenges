@@ -3,10 +3,11 @@ public with sharing class ContactHelper {
 
     }
 
-    @AuraEnabled(cacheable=true)
-    public static Contact getAContact(){
+    @AuraEnabled()
+    public static Contact getAContact(String name){
         try {
-            return [SELECT Name, Phone, Email FROM Contact Where FirstName = 'John' LIMIT 1];
+            String query = '%' + name + '%';
+            return [SELECT Name, Phone, Email FROM Contact Where FirstName LIKE :query LIMIT 1];
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
         }

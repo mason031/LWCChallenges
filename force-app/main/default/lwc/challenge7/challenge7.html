@@ -1,7 +1,9 @@
 <template>
-    <template lwc:if={contact.data}>
-    <p>{contact.data.Name}</p>
-    <p>{contact.data.Phone}</p>
-    <p>{contact.data.Email}</p>
+    <lightning-input label = 'enter a first name' type = 'text' lwc:ref = 'input'></lightning-input>
+    <lightning-button label = 'search for contact' onclick ={searchcontact}></lightning-button>
+    <template lwc:if={contact}>
+    <p>{contact.Name}</p>
+    <p>{contact.Phone}</p>
+    <p>{contact.Email}</p>
 </template>
 </template>
